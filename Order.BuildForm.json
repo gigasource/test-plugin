@@ -1,0 +1,700 @@
+{
+  "_id": "5c42fb05c016df1bbe8cc7ae",
+  "__v": 0,
+  "type": "Collection",
+  "alwaysLoad": false,
+  "class": null,
+  "name": "Order",
+  "id": "5c42fb05c016df1bbe8cc7ae",
+  "tabs": [
+    {
+      "fields": [
+        "bonType",
+        "reactive",
+        "printPending",
+        "businessReceipt",
+        "dayClosing",
+        "manual",
+        "uuid",
+        "printBonUuid",
+        "bookingnumber",
+        "p",
+        "pickupNumber"
+      ],
+      "_id": "5c467beaee5a2d282ff541b7",
+      "name": "metadata"
+    },
+    {
+      "fields": [
+        "date",
+        "status",
+        "takeout",
+        "user",
+        "payment",
+        "note",
+        "table",
+        "cancellationReason",
+        "tipp",
+        "cashback",
+        "receive",
+        "cancellationDate",
+        "Id",
+        "takeOut"
+      ],
+      "_id": "5c5fea4caaa95a1fd4011659",
+      "name": "info"
+    },
+    {
+      "fields": [
+        "commits"
+      ],
+      "_id": "5c62405a9f771028a7cef869",
+      "name": "commits"
+    },
+    {
+      "fields": [
+        "vDate",
+        "vSum",
+        "vSumGroup"
+      ],
+      "_id": "5c701f155bc5bd9753bcb788",
+      "name": "computed"
+    }
+  ],
+  "fields": [
+    {
+      "_id": "5c45ec7fee5a2d282ff53fdd",
+      "schemaType": "string",
+      "key": "Id",
+      "default": null,
+      "type": "input",
+      "label": "Rechnung Nr",
+      "flex": "md3"
+    },
+    {
+      "_id": "5c46cae1e727632f088f7169",
+      "schemaType": "date",
+      "key": "date",
+      "default": null,
+      "type": "input@datetime-local",
+      "label": null,
+      "flex": "md3"
+    },
+    {
+      "_id": "5c45f82dee5a2d282ff54097",
+      "schemaType": "string",
+      "key": "status",
+      "type": "input@select",
+      "optionsType": "onlyValue",
+      "options": [
+        "inProcess",
+        "paid"
+      ],
+      "flex": "md2"
+    },
+    {
+      "_id": "5c45f82dee5a2d282ff5408d",
+      "schemaType": "string",
+      "key": "table",
+      "type": "input",
+      "label": null,
+      "flex": "md2",
+      "addable": true
+    },
+    {
+      "_id": "5c45f82dee5a2d282ff54094",
+      "schemaType": "boolean",
+      "key": "takeOut",
+      "type": "input@checkbox",
+      "default": null,
+      "flex": "md2"
+    },
+    {
+      "_id": "5c45ec7fee5a2d282ff53fdb",
+      "schemaType": "string",
+      "key": "bonType",
+      "type": "input",
+      "label": "",
+      "flex": "md4",
+      "default": null
+    },
+    {
+      "_id": "5c45ec7fee5a2d282ff53fd9",
+      "schemaType": "string",
+      "key": "bookingnumber",
+      "default": null,
+      "type": "input",
+      "label": null,
+      "flex": "md4"
+    },
+    {
+      "_id": "5c45f82dee5a2d282ff54090",
+      "schemaType": "string",
+      "key": "dayClosing",
+      "type": "input",
+      "label": null,
+      "flex": "md4"
+    },
+    {
+      "_id": "5c45f82dee5a2d282ff54091",
+      "schemaType": "number",
+      "key": "pickupNumber",
+      "type": "input@number",
+      "default": null,
+      "label": null,
+      "flex": "md4"
+    },
+    {
+      "_id": "5c45fd79ee5a2d282ff5412d",
+      "schemaType": "string",
+      "key": "printBonUuid",
+      "type": "input",
+      "label": null,
+      "flex": "md4"
+    },
+    {
+      "_id": "5c45fd79ee5a2d282ff5412e",
+      "schemaType": "string",
+      "key": "uuid",
+      "type": "input",
+      "label": null,
+      "flex": "md4"
+    },
+    {
+      "_id": "5c45ec7fee5a2d282ff53fda",
+      "schemaType": "boolean",
+      "key": "reactive",
+      "type": "input@switch",
+      "default": null,
+      "flex": "md4"
+    },
+    {
+      "_id": "5c45f82dee5a2d282ff54095",
+      "schemaType": "boolean",
+      "key": "printPending",
+      "type": "input@switch",
+      "default": null,
+      "flex": "md4"
+    },
+    {
+      "_id": "5c45f82dee5a2d282ff54093",
+      "schemaType": "boolean",
+      "key": "businessReceipt",
+      "type": "input@switch",
+      "flex": "md4"
+    },
+    {
+      "_id": "5c45fd79ee5a2d282ff54130",
+      "schemaType": "boolean",
+      "key": "p",
+      "type": "input@switch",
+      "flex": "md4"
+    },
+    {
+      "_id": "5c45fd79ee5a2d282ff5412f",
+      "schemaType": "boolean",
+      "key": "manual",
+      "type": "input@switch",
+      "flex": "md4"
+    },
+    {
+      "_id": "5c46cae1e727632f088f714f",
+      "schemaType": "array",
+      "key": "user",
+      "type": "array",
+      "fields": [
+        {
+          "schemaType": "string",
+          "key": "name",
+          "type": "ref-select-static",
+          "ref": "User",
+          "labelProp": "name"
+        },
+        {
+          "schemaType": "date",
+          "type": "input@datetime-local",
+          "label": null,
+          "flex": null,
+          "key": "date",
+          "addable": true
+        }
+      ],
+      "flex": "md4",
+      "addable": true
+    },
+    {
+      "_id": "5c45ec7fee5a2d282ff53fd8",
+      "schemaType": "array",
+      "key": "payment",
+      "fields": [
+        {
+          "schemaType": "string",
+          "key": "type",
+          "type": "input@select",
+          "optionsType": "textValue",
+          "options": [
+            {
+              "value": "card",
+              "text": "Karte"
+            },
+            {
+              "value": "cash",
+              "text": "Bar"
+            }
+          ]
+        },
+        {
+          "schemaType": "number",
+          "type": "input@number",
+          "label": null,
+          "flex": null,
+          "key": "value",
+          "addable": true
+        }
+      ],
+      "type": "array",
+      "default": null,
+      "flex": "md4",
+      "addable": true
+    },
+    {
+      "_id": "5c45f82dee5a2d282ff54092",
+      "schemaType": "mixed",
+      "key": "discount",
+      "type": null,
+      "fields": [
+        {
+          "schemaType": "number",
+          "key": "percent",
+          "type": "input@number",
+          "label": null,
+          "flex": null,
+          "default": null
+        },
+        {
+          "schemaType": "number",
+          "key": "sum",
+          "type": "input@number",
+          "label": null,
+          "flex": null
+        }
+      ],
+      "default": null,
+      "mixed": null
+    },
+    {
+      "_id": "5c45f82dee5a2d282ff5408f",
+      "schemaType": "string",
+      "key": "note",
+      "default": null,
+      "type": "input",
+      "label": null,
+      "flex": "md3",
+      "addable": true
+    },
+    {
+      "_id": "5c45f82dee5a2d282ff5408c",
+      "schemaType": "mixed",
+      "key": "customer",
+      "default": null,
+      "mixed": null
+    },
+    {
+      "_id": "5c45f82dee5a2d282ff5408b",
+      "schemaType": "string",
+      "key": "cancellationReason",
+      "default": null,
+      "type": "input",
+      "label": null,
+      "flex": "md3",
+      "addable": true
+    },
+    {
+      "_id": "5c45fd79ee5a2d282ff5412c",
+      "schemaType": "number",
+      "key": "tipp",
+      "type": "input@number",
+      "label": null,
+      "flex": "md3",
+      "addable": true
+    },
+    {
+      "_id": "5c45fd79ee5a2d282ff5412b",
+      "schemaType": "number",
+      "key": "cashback",
+      "type": "input@number",
+      "label": null,
+      "flex": "md3",
+      "addable": true
+    },
+    {
+      "_id": "5c45fd79ee5a2d282ff5412a",
+      "schemaType": "number",
+      "key": "receive",
+      "type": "input@number",
+      "label": null,
+      "flex": "md3",
+      "addable": true
+    },
+    {
+      "_id": "5c45fd79ee5a2d282ff54129",
+      "schemaType": "string",
+      "key": "cancellationDate",
+      "type": "input",
+      "label": null,
+      "flex": "md3",
+      "default": null,
+      "addable": true
+    },
+    {
+      "_id": "5c42fcd9c016df1bbe8cc7af",
+      "schemaType": "array",
+      "key": "items",
+      "type": "tableArray",
+      "fields": [
+        {
+          "schemaType": "string",
+          "key": "Id",
+          "type": "input"
+        },
+        {
+          "schemaType": "string",
+          "type": "ref-select-static",
+          "key": "name",
+          "default": null,
+          "ref": "Product",
+          "labelProp": "name",
+          "onChange": {
+            "_code_type_": "commonJs",
+            "_code_": "module.exports = function(product, rootModel, model) {\n  if (!product) return;\n  model.price = product.price;\n  model.tax = product.tax;\n}"
+          }
+        },
+        {
+          "schemaType": "number",
+          "key": "price",
+          "type": "input@number",
+          "label": null,
+          "flex": null
+        },
+        {
+          "schemaType": "number",
+          "key": "tax",
+          "type": "input@select:number",
+          "optionsType": "textValue",
+          "options": [
+            {
+              "value": "7",
+              "text": "7%"
+            },
+            {
+              "value": "19",
+              "text": "19%"
+            }
+          ],
+          "default": "19"
+        },
+        {
+          "schemaType": "boolean",
+          "key": "showPrice",
+          "type": "input@checkbox",
+          "flex": "md6",
+          "addable": true
+        },
+        {
+          "schemaType": "boolean",
+          "key": "printed",
+          "type": "input@checkbox",
+          "flex": "md6",
+          "addable": true
+        },
+        {
+          "schemaType": "array",
+          "key": "taxes",
+          "type": "input@multiSelect",
+          "flex": "md6",
+          "fields": [
+            {
+              "schemaType": "number"
+            }
+          ],
+          "optionsType": "onlyValue",
+          "options": [
+            "7",
+            "19"
+          ]
+        },
+        {
+          "schemaType": "date",
+          "key": "date",
+          "type": "input@datetime-local",
+          "flex": "md6",
+          "addable": true
+        },
+        {
+          "schemaType": "number",
+          "key": "gang",
+          "type": "rating-select",
+          "length": 3,
+          "flex": "md6",
+          "hintPrepend": ""
+        },
+        {
+          "schemaType": "array",
+          "fields": [
+            {
+              "schemaType": "string"
+            }
+          ],
+          "key": "groupPrinter",
+          "type": "ref-multi-select-static",
+          "flex": "md6",
+          "ref": "GroupPrinter",
+          "labelProp": "name"
+        },
+        {
+          "schemaType": "string",
+          "key": "uuid",
+          "type": "input",
+          "flex": "md6"
+        },
+        {
+          "schemaType": "number",
+          "key": "originalPrice",
+          "type": "input@number",
+          "addable": true
+        },
+        {
+          "schemaType": "boolean",
+          "key": "takeout",
+          "type": "input@checkbox",
+          "flex": "md6",
+          "addable": true
+        },
+        {
+          "schemaType": "array",
+          "key": "extra",
+          "type": "tableArray",
+          "label": null,
+          "flex": null,
+          "fields": [
+            {
+              "schemaType": "string",
+              "key": "name",
+              "type": "input",
+              "label": null,
+              "flex": null
+            },
+            {
+              "schemaType": "number",
+              "key": "price",
+              "type": "input@number",
+              "label": null,
+              "flex": null
+            },
+            {
+              "schemaType": "number",
+              "type": "input@number",
+              "key": "originalPrice",
+              "addable": false
+            }
+          ],
+          "expansion": [
+            "originalPrice"
+          ],
+          "addable": true
+        },
+        {
+          "schemaType": "boolean",
+          "key": "discountResistance",
+          "type": "input@checkbox",
+          "flex": "md6",
+          "addable": true
+        },
+        {
+          "schemaType": "boolean",
+          "key": "isVoucher",
+          "type": "input@checkbox",
+          "addable": true
+        },
+        {
+          "schemaType": "number",
+          "key": "quantity",
+          "type": "input@number"
+        }
+      ],
+      "default": null,
+      "label": null,
+      "flex": null,
+      "expansion": [
+        "extra",
+        "originalPrice",
+        "taxes",
+        "printed",
+        "showPrice",
+        "date",
+        "gang",
+        "groupPrinter",
+        "type",
+        "takeout",
+        "uuid",
+        "discountResistance",
+        "isVoucher"
+      ],
+      "addable": false
+    },
+    {
+      "_id": "5c62405a9f771028a7cef86c",
+      "schemaType": "array",
+      "key": "commits",
+      "type": "tableArray",
+      "fields": [
+        {
+          "schemaType": "string",
+          "key": "itemId",
+          "type": "input"
+        },
+        {
+          "schemaType": "string",
+          "key": "type",
+          "type": "input@select",
+          "optionsType": "onlyValue",
+          "options": [
+            "add",
+            "remove"
+          ]
+        },
+        {
+          "schemaType": "number",
+          "key": "quantity",
+          "type": "input@number"
+        },
+        {
+          "schemaType": "date",
+          "key": "date",
+          "type": "input@datetime-local"
+        },
+        {
+          "schemaType": "boolean",
+          "key": "printed",
+          "type": "input@checkbox"
+        }
+      ]
+    },
+    {
+      "_id": "5c701f155bc5bd9753bcb78d",
+      "schemaType": "date",
+      "key": "vDate",
+      "type": "input@datetime-local"
+    },
+    {
+      "_id": "5c7243a65bc5bd9753bcbaac",
+      "schemaType": "number",
+      "key": "vSum",
+      "type": "input@number"
+    },
+    {
+      "_id": "5c703a615bc5bd9753bcb8d0",
+      "schemaType": "mixed",
+      "key": "vSumGroup",
+      "type": "object",
+      "fields": [
+        {
+          "schemaType": "number",
+          "key": "sum",
+          "type": "input@number",
+          "flex": "md6",
+          "default": ""
+        },
+        {
+          "schemaType": "number",
+          "key": "sumForDayClosing",
+          "type": "input@number",
+          "flex": "md6"
+        },
+        {
+          "schemaType": "number",
+          "key": "sum0",
+          "type": "input@number",
+          "flex": "md4",
+          "addable": true
+        },
+        {
+          "schemaType": "number",
+          "key": "sum7",
+          "type": "input@number",
+          "flex": "md4"
+        },
+        {
+          "schemaType": "number",
+          "key": "sum19",
+          "type": "input@number",
+          "flex": "md4"
+        },
+        {
+          "schemaType": "number",
+          "key": "tax0",
+          "type": "input@number",
+          "flex": "md4",
+          "addable": true
+        },
+        {
+          "schemaType": "number",
+          "key": "tax7",
+          "type": "input@number",
+          "flex": "md4"
+        },
+        {
+          "schemaType": "number",
+          "key": "tax19",
+          "fields": [],
+          "type": "input@number",
+          "flex": "md4"
+        }
+      ]
+    }
+  ],
+  "extensions": [
+    {
+      "_id": "5c72ad19f2a2dba93772a206",
+      "extensionType": "PivotField",
+      "pivotFields": [
+        {
+          "choice": "sum",
+          "path": "vSum"
+        },
+        {
+          "choice": "fields",
+          "fields": [
+            "date",
+            "status",
+            "dayClosing"
+          ]
+        },
+        {
+          "choice": "computedField",
+          "label": "vUser",
+          "fn": {
+            "_code_type_": "commonJs",
+            "_code_": "module.exports = function() {\n  return this.user[0].name;\n}"
+          }
+        },
+        {
+          "choice": "computedField",
+          "fn": {
+            "_code_type_": "commonJs",
+            "_code_": "module.exports = function() {\n  return this.payment[0].type;\n}"
+          },
+          "label": "vPayment"
+        },
+        {
+          "choice": "reducer",
+          "fn": {
+            "_code_type_": "commonJs",
+            "_code_": "module.exports = function(sum, item) {\n  return sum + item.vSum;\n}"
+          },
+          "label": "sum"
+        }
+      ]
+    }
+  ]
+}
